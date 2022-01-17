@@ -1,0 +1,76 @@
+{
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "commit": "git-cz",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "semantic-release": "semantic-release --branches main"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@bowbridge/nest-redis-om",
+  "author": "bowbridge Software GmbH",
+  "description": "Redis OM module for NestJS Framework",
+  "module": "dist/nest-redis-om.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/nest-redis-om.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/nest-redis-om.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@nestjs/common": "^8.2.5",
+    "@nestjs/core": "^8.2.5",
+    "@size-limit/preset-small-lib": "^7.0.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4",
+    "semantic-release": "^18.0.1",
+    "size-limit": "^7.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bowbridge/nest-redis-om.git"
+  },
+  "dependencies": {
+    "redis-om": "^0.1.7"
+  }
+}
