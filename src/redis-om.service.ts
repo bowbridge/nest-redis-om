@@ -31,7 +31,7 @@ export class RedisOmService implements OnModuleInit, OnModuleDestroy {
         this.client = new Client();
         await this.client.open(url);
       } catch (error) {
-        console.log(error);
+        console.debug(error);
       }
     }
   }
